@@ -1,5 +1,6 @@
 package com.capstone.userauthservice.services;
 
+import com.capstone.userauthservice.models.Token;
 import com.capstone.userauthservice.models.User;
 import org.antlr.v4.runtime.misc.Pair;
 
@@ -9,5 +10,7 @@ public interface IAuthService {
                        String password,
                        String phoneNumber);
 
-    public Pair<User, String> login(String email, String password);
+    Token login(String email, String password);
+
+    User validateToken(String tokenValue);
 }
