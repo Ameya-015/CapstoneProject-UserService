@@ -6,8 +6,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-public class SecurityConfig {
-    @Bean
+public class SecurityConfiguration {
+    /*@Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> {
@@ -24,5 +24,5 @@ public class SecurityConfig {
                 );
 
         return http.build();
-    }
+    }*/
 }

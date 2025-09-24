@@ -83,7 +83,7 @@ public class AuthService implements IAuthService {
         Optional<Token> optionalToken = tokenRepository
                 .findByValueAndExpiresAtAfter(tokenValue, new Date());
         if(optionalToken.isEmpty()) {
-            throw new InvalidTokenException("Token is invalid");
+            return null;
         }
         return optionalToken.get().getUser();
     }
