@@ -6,6 +6,7 @@ import com.capstone.userauthservice.dtos.UserDto;
 import com.capstone.userauthservice.models.Token;
 import com.capstone.userauthservice.models.User;
 import com.capstone.userauthservice.services.IAuthService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.antlr.v4.runtime.misc.Pair;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +23,7 @@ public class AuthController {
     }
 
     @PostMapping("/signup")
-    public UserDto signUp(@RequestBody SignUpRequestDto signUpRequestDto) {
+    public UserDto signUp(@RequestBody SignUpRequestDto signUpRequestDto) throws JsonProcessingException {
         User user = authService.signup(signUpRequestDto.getName(), signUpRequestDto.getEmail(),
                 signUpRequestDto.getPassword(), signUpRequestDto.getPhoneNumber());
         return from(user);
